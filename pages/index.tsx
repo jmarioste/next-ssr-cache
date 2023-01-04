@@ -5,9 +5,7 @@ type Props = {
 const Home: NextPage<Props> = ({ date }) => {
   return <div>This page is generated on {date}</div>;
 };
-
 export default Home;
-
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   // add Cache-Control HTTP Header to response
   ctx.res.setHeader(
