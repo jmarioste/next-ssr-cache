@@ -23,7 +23,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   ctx.res.setHeader("Cache-Control", "private, max-age=15");
   ctx.res.setHeader(
     "Last-Modified",
-    dayjs().format("ddd, DD MM YYYY HH:mm:ss GMT")
+    dayjs().format("ddd, DD MMM YYYY HH:mm:ss ") + "GMT"
   );
   return {
     props: {
