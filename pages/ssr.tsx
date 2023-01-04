@@ -19,7 +19,10 @@ export default SSRPage;
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const session = await getSession({ req: ctx.req });
   // add Cache-Control HTTP Header to response
-  ctx.res.setHeader("Cache-Control", "private, maxage=10, must-revalidate");
+  ctx.res.setHeader(
+    "Cache-Control",
+    "private, maxage=10, stale-while-revalidate=59"
+  );
   return {
     props: {
       date: new Date().toISOString(),
